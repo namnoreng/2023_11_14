@@ -26,7 +26,7 @@ bool about_product::Product::isCheaper(Product other) {
 		return false;
 }
 
-int about_product::start() {
+int about_product::start_product() {
 	Product p1, p2;
 	p1.input();
 	p2.input();
@@ -41,7 +41,7 @@ int about_product::start() {
 	return 0;
 }
 
-int about_caculation::start() {
+int about_caculation::start_caculation() {
 	while (1) {
 		double d1, d2;
 
