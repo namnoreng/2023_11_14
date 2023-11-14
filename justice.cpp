@@ -25,7 +25,7 @@ bool Product::isCheaper(Product other) {
 		return false;
 }
 
-int start() {
+int about_product::start() {
 	Product p1, p2;
 	p1.input();
 	p2.input();
