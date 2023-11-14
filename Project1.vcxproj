@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="justice.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="selection.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test.h" />

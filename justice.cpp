@@ -60,16 +60,3 @@ int about_caculation::start() {
 	return 0;
 }
 
-void Selection() {
-	int number;
-	cout << "실행 프로그램 번호: ";
-	cin >> number;
-	switch (number) {
-	case 0: {
-		using namespace about_product;
-		start();
-		break;
-	}
-	default: break;
-	}
-}
