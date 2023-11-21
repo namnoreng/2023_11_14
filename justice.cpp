@@ -74,6 +74,10 @@ void about_car::Car::setSpeed(int s) {
 	speed = s;
 }
 
+void about_car::Car::setSpeed(double s) {
+	speed = (int)s;
+}
+
 int about_car::Car::getGear() {
 	return gear;
 }
@@ -113,23 +117,43 @@ void about_car::Car::show() {
 }
 
 int about_car::start() {
-	getchar();
-	Car car1, car2;
-	srand(time(NULL));
-	while (!_kbhit()) {
-		car1.init(rand() % 200, 1, "red");
-		car1.show();
+	Car car1, car2, myCar;
+	int select;
+	
+	cout <<"[0] 중복 정의에 대한 동작 테스트\n"
+		<<"[1] 랜덤으로 속도 입력 및 비교\n"
+		<<"어느 기능을 사용?\n";
 
-		car2.init(rand() % 200, 1, "blue");
-		car2.show();
+	cin >> select;
 
-		if (car1.getSpeed() > car2.getSpeed()) {
-			cout << "car1 승리 \n";
-		}
-		else {
-			cout << "car2 승리 \n";
-		}
-		Sleep(1000);
+	switch (select) {
+		case 0:
+			myCar.setSpeed(80);
+			cout << "차의 속도:" << myCar.getSpeed() << endl;
+			myCar.setSpeed(100.0);
+			cout << "차의 속도:" << myCar.getSpeed() << endl;
+			break;
+		case 1:
+			srand(time(NULL));
+			while (!_kbhit()) {
+				car1.init(rand() % 200, 1, "red");
+				car1.show();
+
+				car2.init(rand() % 200, 1, "blue");
+				car2.show();
+
+				if (car1.getSpeed() > car2.getSpeed()) {
+					cout << "car1 승리 \n";
+				}
+				else {
+					cout << "car2 승리 \n";
+				}
+				Sleep(1000);
+			}
+			break;
+		default:
+			cout << "입력 오류\n";
+			break;
 	}
 	return 0;
 }
