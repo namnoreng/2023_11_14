@@ -13,7 +13,7 @@ namespace about_product{
 		void print();
 		bool isCheaper(Product other);
 	};
-	int start_product();
+	int start();
 }
 
 namespace about_caculation {
@@ -32,7 +32,7 @@ namespace about_caculation {
 			return d1 / d2;
 		}
 	};
-	int start_caculation();
+	int start();
 }
 
 void Selection();
