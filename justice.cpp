@@ -8,7 +8,7 @@ using namespace about_date;
 
 /*********************************************************************/
 
-void about_product::Product::input() {
+void Product::input() {
 	cout << "상품 일련번호: ";
 	cin >> id;
 	cout << "상품 이름: ";
@@ -17,13 +17,13 @@ void about_product::Product::input() {
 	cin >> price;
 }
 
-void about_product::Product::print() {
+void Product::print() {
 	cout << "상품 번호: " << id << endl
 		<< "상품 이름: " << name << endl
 		<< "상품 가격: " << price << endl;
 }
 
-bool about_product::Product::isCheaper(Product other) {
+bool Product::isCheaper(Product other) {
 	if (price < other.price)
 		return true;
 	else
@@ -65,50 +65,61 @@ int about_caculation::start() {
 }
 
 /*********************************************************************/
+Car::Car() {
+	speed = 0;
+	gear = 1;
+	color = "white";
+}
 
-int about_car::Car::getSpeed() {
+Car::Car(int s, int g, string c) {
+	speed = s;
+	gear = g;
+	color = c;
+}
+
+int Car::getSpeed() {
 	return speed;
 }
 
-void about_car::Car::setSpeed(int s) {
+void Car::setSpeed(int s) {
 	speed = s;
 }
 
-void about_car::Car::setSpeed(double s) {
+void Car::setSpeed(double s) {
 	speed = (int)s;
 }
 
-int about_car::Car::getGear() {
+int Car::getGear() {
 	return gear;
 }
 
-void about_car::Car::setGear(int g) {
+void Car::setGear(int g) {
 	gear = g;
 }
 
-string about_car::Car::getColor() {
+string Car::getColor() {
 	return color;
 }
 
-void about_car::Car::setColor(string c) {
+void Car::setColor(string c) {
 	color = c;
 }
 
-void about_car::Car::speedUp() {
+void Car::speedUp() {
 	speed += 10;
 }
 
-void about_car::Car::speedDown() {
+void Car::speedDown() {
 	speed -= 10;
 }
 
-void about_car::Car::init(int s, int g, string c) {
+void Car::init(int s, int g, string c) {
 	speed = s;
 	gear = g;
 	color = c;
 }
 
-void about_car::Car::show() {
+void Car::show() {
 	cout << "===============================\n"
 		<< "속도:" << speed << endl
 		<< "기어:" << gear << endl
@@ -122,6 +133,7 @@ int about_car::start() {
 	
 	cout <<"[0] 중복 정의에 대한 동작 테스트\n"
 		<<"[1] 랜덤으로 속도 입력 및 비교\n"
+		<<"[2] 중복 정의를 이용한 기본값 설정 테스트\n"
 		<<"어느 기능을 사용?\n";
 
 	cin >> select;
@@ -151,6 +163,13 @@ int about_car::start() {
 				Sleep(1000);
 			}
 			break;
+		case 2: {
+			Car c1;
+			Car c2(0, 1, "blue");
+			c1.show();
+			c2.show();
+		}
+			break;
 		default:
 			cout << "입력 오류\n";
 			break;
@@ -160,31 +179,31 @@ int about_car::start() {
 
 /*********************************************************************/
 
-int about_date::Date::getYear(){
+int Date::getYear(){
 	return year;
 }
 
-void about_date::Date::setYear(int y) {
+void Date::setYear(int y) {
 	year = y;
 }
 
-int about_date::Date::getMonth() {
+int Date::getMonth() {
 	return month;
 }
 
-void about_date::Date::setMonth(int m) {
+void Date::setMonth(int m) {
 	month = m;
 }
 
-int about_date::Date::getDay() {
+int Date::getDay() {
 	return day;
 }
 
-void about_date::Date::setDay(int d) {
+void Date::setDay(int d) {
 	day = d;
 }
 
-void about_date::Date::print() {
+void Date::print() {
 	cout << year << "년" << month << "월" << day << "일" << endl;
 }
 

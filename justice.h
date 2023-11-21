@@ -46,6 +46,8 @@ namespace about_car {
 		int gear;
 		string color;
 	public:
+		Car();
+		Car(int s, int g, string c);
 		int getSpeed();
 		void setSpeed(int s);
 		void setSpeed(double s);
