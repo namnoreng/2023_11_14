@@ -164,10 +164,9 @@ int about_car::start() {
 			}
 			break;
 		case 2: {
-			Car c1;
-			Car c2(0, 1, "blue");
-			c1.show();
-			c2.show();
+			Car c[2] = { {},{100,0,"blue"}};
+			c[0].show();
+			c[1].show();
 		}
 			break;
 		default:
