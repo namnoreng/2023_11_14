@@ -1,8 +1,12 @@
-#include "test.h"
+#include "justice.h"
 
 using namespace std;
 using namespace about_product;
 using namespace about_caculation;
+using namespace about_car;
+using namespace about_date;
+
+/*********************************************************************/
 
 void about_product::Product::input() {
 	cout << "상품 일련번호: ";
@@ -41,22 +45,130 @@ int about_product::start() {
 	return 0;
 }
 
+/*********************************************************************/
+
 int about_caculation::start() {
-	while (1) {
-		double d1, d2;
+	double d1, d2;
 
-		cout << "***사칙연산 프로그램***" << endl;
-		cout << "두 수 입력 :";
-		cin >> d1 >> d2;
+	cout << "***사칙연산 프로그램***" << endl;
+	cout << "두 수 입력 :";
+	cin >> d1 >> d2;
 
-		Calculator ca;
+	Calculator ca;
 
-		cout << d1 << "+" << d2 << "=" << ca.Sum(d1, d2) << endl;
-		cout << d1 << "-" << d2 << "=" << ca.Sub(d1, d2) << endl;
-		cout << d1 << "*" << d2 << "=" << ca.Mul(d1, d2) << endl;
-		cout << d1 << "/" << d2 << "=" << ca.Div(d1, d2) << endl;
-	}
+	cout << d1 << "+" << d2 << "=" << ca.Sum(d1, d2) << endl;
+	cout << d1 << "-" << d2 << "=" << ca.Sub(d1, d2) << endl;
+	cout << d1 << "*" << d2 << "=" << ca.Mul(d1, d2) << endl;
+	cout << d1 << "/" << d2 << "=" << ca.Div(d1, d2) << endl;
 
 	return 0;
 }
 
+/*********************************************************************/
+
+int about_car::Car::getSpeed() {
+	return speed;
+}
+
+void about_car::Car::setSpeed(int s) {
+	speed = s;
+}
+
+int about_car::Car::getGear() {
+	return gear;
+}
+
+void about_car::Car::setGear(int g) {
+	gear = g;
+}
+
+string about_car::Car::getColor() {
+	return color;
+}
+
+void about_car::Car::setColor(string c) {
+	color = c;
+}
+
+void about_car::Car::speedUp() {
+	speed += 10;
+}
+
+void about_car::Car::speedDown() {
+	speed -= 10;
+}
+
+void about_car::Car::init(int s, int g, string c) {
+	speed = s;
+	gear = g;
+	color = c;
+}
+
+void about_car::Car::show() {
+	cout << "===============================\n"
+		<< "속도:" << speed << endl
+		<< "기어:" << gear << endl
+		<< "색상:" << color << endl
+		<< "===============================\n";
+}
+
+int about_car::start() {
+	getchar();
+	Car car1, car2;
+	srand(time(NULL));
+	while (!_kbhit()) {
+		car1.init(rand() % 200, 1, "red");
+		car1.show();
+
+		car2.init(rand() % 200, 1, "blue");
+		car2.show();
+
+		if (car1.getSpeed() > car2.getSpeed()) {
+			cout << "car1 승리 \n";
+		}
+		else {
+			cout << "car2 승리 \n";
+		}
+		Sleep(1000);
+	}
+	return 0;
+}
+
+/*********************************************************************/
+
+int about_date::Date::getYear(){
+	return year;
+}
+
+void about_date::Date::setYear(int y) {
+	year = y;
+}
+
+int about_date::Date::getMonth() {
+	return month;
+}
+
+void about_date::Date::setMonth(int m) {
+	month = m;
+}
+
+int about_date::Date::getDay() {
+	return day;
+}
+
+void about_date::Date::setDay(int d) {
+	day = d;
+}
+
+void about_date::Date::print() {
+	cout << year << "년" << month << "월" << day << "일" << endl;
+}
+
+int about_date::start() {
+	Date date;
+	date.setYear(2025);
+	date.setMonth(11);
+	date.setDay(20);
+	date.print();
+	return 0;
+}

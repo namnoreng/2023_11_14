@@ -144,7 +144,7 @@
     <ClCompile Include="selection.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="namespace.h" />
+    <ClInclude Include="justice.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
