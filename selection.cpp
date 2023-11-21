@@ -9,6 +9,7 @@ void Selection() {
 		using namespace about_product;
 		start();
 		break;
+	}
 	case 1: {
 		using namespace about_caculation;
 		start();
